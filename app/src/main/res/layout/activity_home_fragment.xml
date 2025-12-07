@@ -9,7 +9,7 @@
     <include layout="@layout/toolbar_home" />
 
     <Button
-        android:id="@+id/btnCart"
+        android:id="@+id/btnBasket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -18,10 +18,10 @@
         android:text="Корзина"
         android:textSize="16sp" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvDoners"
+    <Button
+        android:id="@+id/btnOpenDetails"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="8dp"/>
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
 </LinearLayout>

@@ -4,9 +4,10 @@ plugins {
     id("org.jetbrains.kotlin.kapt")
 }
 
+
 android {
     namespace = "kz.itzhiti.donernaabaya"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "kz.itzhiti.donernaabaya"
@@ -66,5 +67,8 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
+
+    implementation("com.google.android.material:material:1.12.0")
     kapt(libs.androidx.room.compiler)
 }
