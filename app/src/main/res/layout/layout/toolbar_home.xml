@@ -1,0 +1,19 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="56dp">
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:text="ДонерНаАбая"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:id="@+id/searchBtn"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_search"
+        android:layout_width="32dp"
+        android:layout_height="32dp"/>
+</RelativeLayout>
+
