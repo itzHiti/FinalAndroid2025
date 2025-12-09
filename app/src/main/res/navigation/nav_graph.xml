@@ -40,6 +40,18 @@
     <fragment
         android:id="@+id/basketFragment"
         android:name="kz.itzhiti.donernaabaya.BasketFragment"
-        android:label="BasketFragment" />
+        android:label="BasketFragment" >
+        <action
+            android:id="@+id/action_basketFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="kz.itzhiti.donernaabaya.CheckoutFragment"
+        android:label="CheckoutFragment" />
+
+
 
 </navigation>
