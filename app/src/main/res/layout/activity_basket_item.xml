@@ -6,14 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Заголовок -->
-    <TextView
-        android:text="Корзина"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:padding="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
+    <!-- Главная Икона, можно с ее помощью бекать на main page-->
+    <include layout="@layout/toolbar_home" />
+
+<!--    профиль-->
+    <ImageButton
+        android:id="@+id/btnProfile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_circle_white"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:scaleType="centerCrop"
+        android:padding="4dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="Профиль"/>
+
+
 
     <!-- Список товаров -->
     <androidx.recyclerview.widget.RecyclerView
@@ -21,6 +31,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
+
+
+
 
     <!-- Итоговый блок -->
     <LinearLayout
