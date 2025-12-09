@@ -6,8 +6,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_doner">
 
+<!--   это типо иконы, она отдельно создана, но там просто название -->
     <include layout="@layout/toolbar_home" />
 
+<!--    кнопка для перехода на страницу корзины -->
     <Button
         android:id="@+id/btnBasket"
         android:layout_width="wrap_content"
@@ -18,6 +20,23 @@
         android:text="Корзина"
         android:textSize="16sp" />
 
+
+
+<!--    Иконка для профиля, тип при нажатии на него переходит в профиль-->
+    <ImageButton
+        android:id="@+id/btnProfile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/bg_circle_white"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:scaleType="centerCrop"
+        android:padding="4dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="Профиль"/>
+
+
+<!--    хз че это, это Амир создал-->
     <Button
         android:id="@+id/btnOpenDetails"
         android:layout_width="match_parent"

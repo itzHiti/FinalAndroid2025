@@ -16,8 +16,7 @@
         <!-- Блок с фото и кнопкой закрытия -->
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_marginBottom="10dp">
+            android:layout_height="wrap_content">
 
             <!-- Картинка в CardView, чтобы были скруглённые углы -->
             <androidx.cardview.widget.CardView
@@ -134,14 +133,15 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnAtb"
+            <!-- выбор размера -->
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/sizeToggleGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="#FF8800"
                 android:text="Добавить" />
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
-</ScrollView>
+</LinearLayout>
