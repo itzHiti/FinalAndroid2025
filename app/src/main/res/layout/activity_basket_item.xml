@@ -2,28 +2,29 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#F5F5F5"
+
+    android:background="@drawable/bg_doner"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Заголовок -->
 
-    <!-- Главная Икона, можно с ее помощью бекать на main page-->
-    <include layout="@layout/toolbar_home" />
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="82dp"
+        android:layout_height="83dp"
 
-<!--    профиль-->
-    <ImageButton
-        android:id="@+id/btnProfile"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:background="@drawable/bg_circle_white"
-        android:src="@android:drawable/ic_menu_myplaces"
-        android:scaleType="centerCrop"
-        android:padding="4dp"
-        android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:contentDescription="Профиль"/>
+        android:paddingVertical="8dp"
+        android:src="@drawable/logo_doner" />
 
-
+    <TextView
+        android:text="Корзина"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <!-- Список товаров -->
     <androidx.recyclerview.widget.RecyclerView

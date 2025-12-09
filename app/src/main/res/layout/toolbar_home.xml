@@ -1,19 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/toolbarHome"
-    android:padding="12dp"
+    android:paddingVertical="8dp"
     android:layout_width="match_parent"
-    android:layout_height="56dp"
-    android:clickable="true"
-    android:focusable="true">
-<!--2 строки выше, нужны чтобы при нажати на "лого" переходило на главную страницу-->
+    android:layout_height="82dp">
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+
+        android:layout_centerVertical="true"
+        android:src="@drawable/logo_doner" />
 
     <TextView
         android:id="@+id/appTitle"
-        android:text="ДонерНаАбая"
+        android:text="Донер На Абая"
         android:textSize="20sp"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"/>
+        android:layout_width="wrap_content"
+        android:layout_toEndOf="@id/ivLogo"
+        android:layout_marginStart="8dp"
+        android:layout_centerVertical="true"/>
+
 </RelativeLayout>
 
