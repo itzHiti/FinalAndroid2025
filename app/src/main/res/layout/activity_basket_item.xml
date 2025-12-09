@@ -13,6 +13,7 @@
         android:id="@+id/ivLogo"
         android:layout_width="82dp"
         android:layout_height="83dp"
+
         android:layout_centerVertical="true"
         android:paddingVertical="8dp"
         android:src="@drawable/logo_doner" />
