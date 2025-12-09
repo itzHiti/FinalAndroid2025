@@ -1,120 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#F5F5F5"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="12dp"
-    card_view:cardCornerRadius="16dp"
-    card_view:cardElevation="6dp"
-    >
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:padding="12dp"
+    <!-- главная икона -->
+    <include layout="@layout/toolbar_home" />
+
+    <!-- 🔹 осоновная детальная страница товара -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="160dp"
-            android:layout_marginBottom="10dp">
-
-            <ImageView
-                android:id="@+id/productIm"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop" />
-
-            <ImageButton
-                android:id="@+id/btnClose"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:background="@android:color/transparent"
-                android:padding="4dp"
-                android:src="@android:drawable/ic_menu_close_clear_cancel"
-                android:layout_gravity="top|start"
-                android:layout_margin="12dp"
-                card_view:tint="#FFFFFF" />
-
-        </FrameLayout>
-
-
-
-        <TextView
-            android:id="@+id/prn"
-            android:text="Doner Classic"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/productDescription"
-            android:text="Описание блюда"
-            android:textSize="14sp"
-            android:textColor="#777"
-            android:layout_marginTop="6dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <!-- ВЫБОР РАЗМЕРА -->
-        <com.google.android.material.button.MaterialButtonToggleGroup
-            android:id="@+id/sizeToggleGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:singleSelection="true">
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/size1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1"
-                android:textSize="20dp"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/size15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1.5"
-                android:textSize="20dp"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/size2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2"
-                android:textSize="20dp"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-        </com.google.android.material.button.MaterialButtonToggleGroup>
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            android:padding="12dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp">
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/productIm"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop" />
+
+                <ImageButton
+                    android:id="@+id/btnClose"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@android:color/transparent"
+                    android:padding="4dp"
+                    android:src="@android:drawable/ic_menu_close_clear_cancel"
+                    android:layout_gravity="top|start"
+                    android:layout_margin="12dp"
+                    app:tint="#FFFFFF" />
+
+            </FrameLayout>
 
             <TextView
-                android:id="@+id/prodpr"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:text="1500 ₸"
+                android:id="@+id/prn"
+                android:text="Doner Classic"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-            <Button
-                android:id="@+id/btnAtb"
+            <TextView
+                android:id="@+id/productDescription"
+                android:text="Описание блюда"
+                android:textSize="14sp"
+                android:textColor="#777"
+                android:layout_marginTop="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- выбор размера -->
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/sizeToggleGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FF8800"
-                android:text="Добавить"
-                android:textColor="#BC0000" />
+                android:layout_marginTop="10dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/size1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="20dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/size15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.5"
+                    android:textSize="20dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/size2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textSize="20dp"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp">
+
+                <TextView
+                    android:id="@+id/prodpr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="1500 ₸"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnAtb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FF8800"
+                    android:text="Добавить"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
-</ScrollView>
+</LinearLayout>
