@@ -4,9 +4,8 @@
 
     <!-- Градиент в “донерных” цветах -->
     <gradient
-        android:startColor="#E3F2FD"
-        android:centerColor="#90CAF9"
-        android:endColor="#1E88E5"
+        android:startColor="#FFFFFF "
+        android:endColor="#FF9800"
         android:angle="90" />
 </shape>
 
@@ -14,3 +13,8 @@
 <!--    android:startColor="#FF9800"-->
 <!--    android:centerColor="#FF5722"-->
 <!--    android:endColor="#F44336"-->
+
+
+<!--    android:startColor="#E3F2FD"-->
+<!--    android:centerColor="#90CAF9"-->
+<!--    android:endColor="#1E88E5"-->

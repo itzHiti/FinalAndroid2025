@@ -2,11 +2,21 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="#F5F5F5"
+
+    android:background="@drawable/bg_doner"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!-- Заголовок -->
+
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="82dp"
+        android:layout_height="83dp"
+        android:layout_centerVertical="true"
+        android:paddingVertical="8dp"
+        android:src="@drawable/logo_doner" />
+
     <TextView
         android:text="Корзина"
         android:textSize="24sp"
