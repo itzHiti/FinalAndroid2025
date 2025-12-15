@@ -8,23 +8,7 @@
     android:layout_height="match_parent">
 
     <!-- Заголовок -->
-
-    <ImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="82dp"
-        android:layout_height="83dp"
-
-        android:layout_centerVertical="true"
-        android:paddingVertical="8dp"
-        android:src="@drawable/logo_doner" />
-
-    <TextView
-        android:text="Корзина"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:padding="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <include layout="@layout/toolbar_home" />
 
     <!-- Список товаров -->
     <androidx.recyclerview.widget.RecyclerView
@@ -32,8 +16,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
-
-
 
 
     <!-- Итоговый блок -->

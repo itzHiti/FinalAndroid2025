@@ -46,13 +46,20 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnDeleteItem"
-            android:text="Удалить"
-            android:textSize="14sp"
-            android:backgroundTint="#FF4444"
-            android:textColor="#FFFFFF"
+            android:id="@+id/btnAddItem"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="40dp"
+            android:backgroundTint="#6B75EF"
+            android:text="add"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnDeleteItem"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="#FF6363"
+            android:text="delete"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 
