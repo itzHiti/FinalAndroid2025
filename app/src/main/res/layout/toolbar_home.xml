@@ -4,43 +4,44 @@
     android:paddingVertical="8dp"
     android:layout_width="match_parent"
     android:layout_height="82dp"
-    android:background="#2F2F2F">
-
-
-    <ImageButton
-        android:id="@+id/ivLogo"
-        android:layout_width="82dp"
-        android:layout_height="82dp"
-        android:layout_centerVertical="true"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:src="@drawable/logo_doner"
-        android:contentDescription="To main"
-        android:scaleType="centerInside" />
-
-    <TextView
-        android:id="@+id/appTitle"
-        android:text="Doner Na Abaya"
-        android:textSize="20sp"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_toEndOf="@id/ivLogo"
-        android:layout_marginStart="8dp"
-        android:layout_centerVertical="true"
-        android:textColor="@color/white"
-        />
+    android:background="@drawable/bg_main">
 
     <ImageButton
         android:id="@+id/btnProfile"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="11dp"
-        android:layout_marginTop="8dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="11dp"
         android:background="@drawable/bg_circle_white"
         android:contentDescription="Profile"
         android:padding="4dp"
         android:scaleType="centerCrop"
         android:src="@android:drawable/ic_menu_myplaces" />
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/btnProfile"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="8dp"
+        android:text="Doner Na Abaya"
+        android:textSize="20sp"
+        android:textColor="@color/white" />
+
+<!--    <ImageButton-->
+<!--        android:id="@+id/ivLogo"-->
+<!--        android:layout_width="82dp"-->
+<!--        android:layout_height="82dp"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_marginEnd="11dp"-->
+<!--        android:background="?attr/selectableItemBackgroundBorderless"-->
+<!--        android:src="@drawable/logo_doner"-->
+<!--        android:contentDescription="To main"-->
+<!--        android:scaleType="centerInside" />-->
+
 
 </RelativeLayout>
 

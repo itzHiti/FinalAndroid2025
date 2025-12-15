@@ -19,10 +19,10 @@ class HomeFragment : Fragment(R.layout.activity_home_fragment) {
         }
 
         // КНОПКА ОТКРЫТЬ ДЕТАЛИ
-        val openDetailsButton = view.findViewById<MaterialButton>(R.id.btnOpenDetails)
-        openDetailsButton.setOnClickListener {
-            findNavController().navigate(R.id.itemDetailFragment)
-            // или action_homeFragment_to_itemDetailFragment
-        }
+//        val openDetailsButton = view.findViewById<MaterialButton>(R.id.btnOpenDetails)
+//        openDetailsButton.setOnClickListener {
+//            findNavController().navigate(R.id.itemDetailFragment)
+//            // или action_homeFragment_to_itemDetailFragment
+//        }
     }
 }
