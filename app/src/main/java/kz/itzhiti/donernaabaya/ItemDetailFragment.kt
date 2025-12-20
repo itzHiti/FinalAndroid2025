@@ -7,7 +7,7 @@ import android.widget.ImageButton
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
-class ItemDetailFragment : Fragment(R.layout.activity_item_detail) {
+class ItemDetailFragment : Fragment(R.layout.item_detail_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

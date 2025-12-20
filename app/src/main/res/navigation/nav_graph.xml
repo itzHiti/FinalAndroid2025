@@ -3,43 +3,86 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
 
-    <!-- Главный экран -->
+    <!-- LOGIN -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="kz.itzhiti.donernaabaya.LoginFragment"
+        android:label="Login">
+
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <!-- REGISTER -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="kz.itzhiti.donernaabaya.RegisterFragment"
+        android:label="Register">
+
+        <action
+            android:id="@+id/action_register_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <!-- HOME -->
     <fragment
         android:id="@+id/homeFragment"
         android:name="kz.itzhiti.donernaabaya.HomeFragment"
-        android:label="HomeFragment">
+        android:label="Home">
 
-        <!-- Переход из Home → ItemDetails -->
         <action
-            android:id="@+id/action_homeFragment_to_itemDetailFragment"
+            android:id="@+id/action_home_to_details"
             app:destination="@id/itemDetailFragment" />
 
-        <!-- Переход из Home → Basket -->
         <action
-            android:id="@+id/action_homeFragment_to_basketFragment"
+            android:id="@+id/action_home_to_basket"
             app:destination="@id/basketFragment" />
 
+        <action
+            android:id="@+id/action_home_to_profile"
+            app:destination="@id/profileFragment" />
     </fragment>
 
-    <!-- Экран деталей донера -->
+    <!-- ITEM DETAILS -->
     <fragment
         android:id="@+id/itemDetailFragment"
         android:name="kz.itzhiti.donernaabaya.ItemDetailFragment"
-        android:label="ItemDetailFragment">
+        android:label="Details">
 
-        <!-- Переход из Details → Basket -->
         <action
-            android:id="@+id/action_itemDetailFragment_to_basketFragment"
-            app:destination="@id/basketFragment" />
-
+            android:id="@+id/action_details_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
-    <!-- Экран корзины -->
+    <!-- BASKET -->
     <fragment
         android:id="@+id/basketFragment"
         android:name="kz.itzhiti.donernaabaya.BasketFragment"
-        android:label="BasketFragment" />
+        android:label="Basket">
+
+        <action
+            android:id="@+id/action_basket_to_home"
+            app:destination="@id/homeFragment"/>
+
+        <action
+            android:id="@+id/action_basket_to_profile"
+            app:destination="@id/profileFragment"/>
+    </fragment>
+
+    <!-- PROFILE -->
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="kz.itzhiti.donernaabaya.ProfileFragment"
+        android:label="Profile">
+
+        <action
+            android:id="@+id/action_profile_to_home"
+            app:destination="@id/homeFragment"/>
+    </fragment>
 
 </navigation>

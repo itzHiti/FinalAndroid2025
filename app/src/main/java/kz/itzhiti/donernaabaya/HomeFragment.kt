@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.button.MaterialButton   // <-- ВАЖНО
 
-class HomeFragment : Fragment(R.layout.activity_home_fragment) {
+class HomeFragment : Fragment(R.layout.home_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,3 +26,8 @@ class HomeFragment : Fragment(R.layout.activity_home_fragment) {
         }
     }
 }
+class ItemDetailFragment : Fragment(R.layout.item_detail_fragment)
+class BasketFragment : Fragment(R.layout.basket_item_fragment)
+class ProfileFragment : Fragment(R.layout.profile_fragment)
+class LoginFragment : Fragment(R.layout.login_fragment)
+class RegisterFragment : Fragment(R.layout.register_fragment)

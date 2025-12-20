@@ -31,7 +31,8 @@
 
     <Button
         android:id="@+id/btnRegister"
-        android:text="Зарегистрироваться"
+        android:text="Sign Up"
+        android:backgroundTint="#F87D07"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
