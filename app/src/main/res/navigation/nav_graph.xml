@@ -8,7 +8,7 @@
     <!-- LOGIN -->
     <fragment
         android:id="@+id/loginFragment"
-        android:name="kz.itzhiti.donernaabaya.LoginFragment"
+        android:name="kz.itzhiti.donernaabaya.ui.fragments.LoginFragment"
         android:label="Login">
 
         <action
@@ -19,7 +19,7 @@
     <!-- REGISTER -->
     <fragment
         android:id="@+id/registerFragment"
-        android:name="kz.itzhiti.donernaabaya.RegisterFragment"
+        android:name="kz.itzhiti.donernaabaya.ui.fragments.RegisterFragment"
         android:label="Register">
 
         <action
@@ -30,7 +30,7 @@
     <!-- HOME -->
     <fragment
         android:id="@+id/homeFragment"
-        android:name="kz.itzhiti.donernaabaya.HomeFragment"
+        android:name="kz.itzhiti.donernaabaya.ui.fragments.HomeFragment"
         android:label="Home">
 
         <action
@@ -38,7 +38,7 @@
             app:destination="@id/itemDetailFragment" />
 
         <action
-            android:id="@+id/action_home_to_basket"
+            android:id="@+id/action_itemDetailFragment_to_basketFragment"
             app:destination="@id/basketFragment" />
 
         <action
@@ -49,8 +49,12 @@
     <!-- ITEM DETAILS -->
     <fragment
         android:id="@+id/itemDetailFragment"
-        android:name="kz.itzhiti.donernaabaya.ItemDetailFragment"
+        android:name="kz.itzhiti.donernaabaya.ui.fragments.ItemDetailFragment"
         android:label="Details">
+
+        <action
+            android:id="@+id/action_itemDetailFragment_to_basketFragment"
+            app:destination="@id/basketFragment" />
 
         <action
             android:id="@+id/action_details_to_home"
@@ -62,7 +66,7 @@
     <!-- BASKET -->
     <fragment
         android:id="@+id/basketFragment"
-        android:name="kz.itzhiti.donernaabaya.BasketFragment"
+        android:name="kz.itzhiti.donernaabaya.ui.fragments.BasketFragment"
         android:label="Basket">
 
         <action
@@ -77,7 +81,7 @@
     <!-- PROFILE -->
     <fragment
         android:id="@+id/profileFragment"
-        android:name="kz.itzhiti.donernaabaya.ProfileFragment"
+        android:name="kz.itzhiti.donernaabaya.ui.fragments.ProfileFragment"
         android:label="Profile">
 
         <action

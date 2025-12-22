@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <!-- Base app palette -->
     <color name="white">#FFFFFFFF</color>
-    <color name="dna_primary">#FFFFFFFF</color>
-    <color name="dna_primary_dark">#FFFFFFFF</color>
-    <color name="Butten_color">#ff5400</color>
+    <color name="black">#FF000000</color>
+
+    <!-- Missing colors referenced in layouts -->
+    <color name="gray">#FF9E9E9E</color>
+    <color name="green">#FF4CAF50</color>
+    <color name="red">#FFF44336</color>
+    <color name="blue">#FF2196F3</color>
+    <color name="dna_primary">#FFff5400</color>
+    <color name="dna_primary_dark">#FFc63f00</color>
 </resources>

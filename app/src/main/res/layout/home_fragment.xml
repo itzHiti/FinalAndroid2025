@@ -1,230 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_doner">
-
+    android:layout_height="match_parent">
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
-    <!--Logo + profile-->
-        <include layout="@layout/toolbar_home" />
-
-        <!--категории-->
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingHorizontal="16dp"
-            android:gravity="center_horizontal"
-            android:paddingTop="8dp">
-
->
-
-            <!-- Doners -->
-            <LinearLayout
-                android:id="@+id/doners_category"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:gravity="center"
-                android:orientation="vertical"
-                >
-
-                <ImageView
-                    android:id="@+id/iconDoners"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/ic_doner" />
-
-                <TextView
-                    android:id="@+id/textDoners"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:text="Донер"
-                    android:textColor="#ff4122"
-
-                    android:textSize="15sp" />
-
-                <View
-                    android:id="@+id/lineDoners"
-                    android:layout_width="28dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="6dp"
-                    android:background="#ff5400"
-
-
-                android:visibility="invisible" />
-            </LinearLayout>
-
-            <!-- Drinks -->
-            <LinearLayout
-                android:id="@+id/drinks_category"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:gravity="center"
-                android:orientation="vertical"
-                >
-
-                <ImageView
-                    android:id="@+id/iconDrinks"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/ic_drink" />
-
-                <TextView
-                    android:id="@+id/textDrinks"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:text="Напитки"
-                    android:textSize="15sp"
-
-
-                    android:textStyle="bold" />
-
-                <View
-                    android:id="@+id/lineDrinks"
-                    android:layout_width="28dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="6dp"
-                    android:background="@color/white"
-                    android:visibility="invisible" />
-            </LinearLayout>
-
-            <!-- Sauces -->
-            <LinearLayout
-                android:id="@+id/sauces_category"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
-                android:gravity="center"
-                android:orientation="vertical"
-                >
-
-                <ImageView
-                    android:id="@+id/iconSauces"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/ic_sauce" />
-
-                <TextView
-                    android:id="@+id/textSauces"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="0dp"
-                    android:text="Соусы"
-                    android:textSize="15sp"
-
-                    android:textStyle="bold" />
-
-                <View
-                    android:id="@+id/lineSauces"
-                    android:layout_width="28dp"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="6dp"
-                    android:background="@color/white"
-                    android:visibility="invisible" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@android:color/transparent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_main"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🔥 Специальное предложение"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold"
-                    android:textSize="16sp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="Бесплатная доставка при заказе от ₸2500"
-                    android:textColor="@android:color/white"
-                    android:textSize="13sp"/>
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/productsRecycler"
+            android:id="@+id/rvProducts"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginTop="5dp"/>
-
+            android:layout_height="match_parent" />
     </LinearLayout>
-
-
-
-    <!-- корзинка -->
-    <LinearLayout
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:visibility="gone" />
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:visibility="gone" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnBasket"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="20dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:paddingHorizontal="30dp"
-        android:paddingVertical="12dp"
-        android:background="@drawable/bg_basket_floating"
-        android:elevation="10dp">
-
-        <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-
-            android:src="@android:drawable/ic_menu_agenda"
-            app:tint="#FFFFFF"/>
-
-        <TextView
-            android:id="@+id/tvBasketPrice"
-            android:layout_marginStart="8dp"
-            android:text="0 ₸"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold"
-            android:textSize="16sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-    </LinearLayout>
-
+        android:layout_margin="20dp" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="90dp" />
 </FrameLayout>

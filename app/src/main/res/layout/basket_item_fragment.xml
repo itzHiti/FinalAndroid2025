@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-
     android:background="@drawable/bg_doner"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,13 +9,33 @@
     <!-- Заголовок -->
     <include layout="@layout/toolbar_home" />
 
-    <!-- Список товаров -->
+    <!-- Empty State -->
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Корзина пуста"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <!-- Error Message -->
+    <TextView
+        android:id="@+id/tvError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:textColor="#FF6B6B"
+        android:visibility="gone" />
+
+    <!-- Список товаров в корзине -->
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cartRecyclerView"
+        android:id="@+id/rvBasket"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
-
 
     <!-- Итоговый блок -->
     <LinearLayout
@@ -24,29 +43,54 @@
         android:padding="16dp"
         android:background="#ffffff"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
-
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/cartTotalPrice"
+            android:id="@+id/tvTotalPrice"
             android:text="Итого: 0 ₸"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="@android:color/black"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/checkoutButton"
-            android:text="Перейти к оплате"
-            android:textSize="28sp"
+            android:id="@+id/btnOrder"
+            android:text="Оформить заказ"
+            android:textSize="16sp"
             android:background="@drawable/bg_basket_floating"
             app:backgroundTint="@null"
             android:textColor="@color/white"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <!-- Back and Profile buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="@drawable/bg_main"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="◀ Назад"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/btnProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="👤 Профиль" />
+
     </LinearLayout>
 
 </LinearLayout>
