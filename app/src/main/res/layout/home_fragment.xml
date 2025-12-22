@@ -61,9 +61,10 @@
                     android:layout_width="28dp"
                     android:layout_height="2dp"
                     android:layout_marginTop="6dp"
-                    android:textColor="ff5400"
+                    android:background="#ff5400"
 
-                    android:visibility="invisible" />
+
+                android:visibility="invisible" />
             </LinearLayout>
 
             <!-- Drinks -->
