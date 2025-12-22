@@ -20,16 +20,15 @@
 
     <ImageButton
         android:id="@+id/btnProfile"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="11dp"
-        android:background="@drawable/bg_circle_white"
-        android:contentDescription="Profile"
         android:padding="4dp"
         android:scaleType="centerCrop"
-        android:src="@android:drawable/ic_menu_myplaces" />
+        android:src="@drawable/ic_profil"
+        android:background="@android:color/transparent"/>
 
     <TextView
         android:id="@+id/appTitle"
@@ -45,6 +44,7 @@
         android:textColor="@color/white"
         android:maxLines="1"
         android:ellipsize="end" />
+
 
 </RelativeLayout>
 

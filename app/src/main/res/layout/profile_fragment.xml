@@ -25,12 +25,13 @@
             <!-- Фото профиля -->
             <ImageView
                 android:id="@+id/imgProfile"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
                 android:layout_marginTop="24dp"
                 android:background="@android:color/darker_gray"
                 android:scaleType="centerCrop"
-                android:clipToOutline="true" />
+                android:clipToOutline="true"
+                android:src="@drawable/igor"/>
 
             <!-- Имя (заголовок) -->
             <TextView
@@ -91,7 +92,7 @@
                 android:layout_width="200dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="30dp"
-                android:backgroundTint="#FF8800"
+                android:backgroundTint="@color/Butten_color"
                 android:textColor="@color/white"/>
 
         </LinearLayout>
