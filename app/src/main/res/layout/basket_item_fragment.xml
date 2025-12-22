@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
 
     android:background="@drawable/bg_doner"
@@ -8,23 +8,7 @@
     android:layout_height="match_parent">
 
     <!-- Заголовок -->
-
-    <ImageView
-        android:id="@+id/ivLogo"
-        android:layout_width="82dp"
-        android:layout_height="83dp"
-
-        android:layout_centerVertical="true"
-        android:paddingVertical="8dp"
-        android:src="@drawable/logo_doner" />
-
-    <TextView
-        android:text="Корзина"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:padding="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <include layout="@layout/toolbar_home" />
 
     <!-- Список товаров -->
     <androidx.recyclerview.widget.RecyclerView
@@ -34,15 +18,15 @@
         android:layout_weight="1"/>
 
 
-
-
     <!-- Итоговый блок -->
     <LinearLayout
         android:orientation="vertical"
         android:padding="16dp"
         android:background="#ffffff"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
+
 
         <TextView
             android:id="@+id/cartTotalPrice"
@@ -50,14 +34,16 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            />
 
         <Button
             android:id="@+id/checkoutButton"
             android:text="Перейти к оплате"
             android:textSize="28sp"
-            android:backgroundTint="#FF8800"
-            android:textColor="#040000"
+            android:background="@drawable/bg_basket_floating"
+            app:backgroundTint="@null"
+            android:textColor="@color/white"
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>

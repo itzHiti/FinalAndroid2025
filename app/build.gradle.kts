@@ -67,8 +67,8 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.0")
+    implementation(libs.kotlin.stdlib)
 
-    implementation("com.google.android.material:material:1.12.0")
+    implementation(libs.material)
     kapt(libs.androidx.room.compiler)
 }

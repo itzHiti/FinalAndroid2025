@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Toolbar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/bg_main">
+
+        <ImageButton
+            android:id="@+id/ivLogo"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="11dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/logo_doner"
+            android:contentDescription="To main"
+            android:scaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/appTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/ivLogo"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:text="Doner Na Abaya"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:maxLines="1"
+            android:ellipsize="end" />
+    </RelativeLayout>
+
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/etEmail"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:hint="Пароль"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"/>
+
+        <EditText
+            android:id="@+id/etPasswordConfirm"
+            android:hint="Повторите пароль"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:text="Sign Up"
+            android:backgroundTint="@color/Butten_color"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>
