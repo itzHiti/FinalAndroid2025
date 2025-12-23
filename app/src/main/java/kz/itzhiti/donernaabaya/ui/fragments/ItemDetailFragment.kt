@@ -66,22 +66,21 @@ class ItemDetailFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        // Раскомментируй после Rebuild когда Binding сгенерируется
-        // binding.btnClose.setOnClickListener {
-        //     findNavController().navigateUp()
-        // }
+        binding.btnClose.setOnClickListener {
+            findNavController().navigateUp()
+        }
 
-        // binding.btnMinus?.setOnClickListener {
-        //     if (quantity > 1) {
-        //         quantity--
-        //         binding.tvQuantity?.text = quantity.toString()
-        //     }
-        // }
+        binding.btnMinus.setOnClickListener {
+            if (quantity > 1) {
+                quantity--
+                binding.tvQuantity.text = quantity.toString()
+            }
+        }
 
-        // binding.btnPlus?.setOnClickListener {
-        //     quantity++
-        //     binding.tvQuantity?.text = quantity.toString()
-        // }
+        binding.btnPlus.setOnClickListener {
+            quantity++
+            binding.tvQuantity.text = quantity.toString()
+        }
     }
 
     override fun onDestroyView() {

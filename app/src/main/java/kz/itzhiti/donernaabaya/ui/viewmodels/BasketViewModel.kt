@@ -76,9 +76,14 @@ class BasketViewModel(app: Application) : AndroidViewModel(app) {
         _orderSuccess.value = null
     }
 
-    fun placeOrder(deliveryAddress: String, comment: String? = null) {
+    fun placeOrder(deliveryAddress: String, phone: String, comment: String? = null) {
         if (deliveryAddress.isBlank()) {
             _error.value = "Пожалуйста укажите адрес доставки"
+            return
+        }
+
+        if (phone.isBlank()) {
+            _error.value = "Пожалуйста укажите номер телефона"
             return
         }
 
@@ -95,7 +100,7 @@ class BasketViewModel(app: Application) : AndroidViewModel(app) {
             _isPlacingOrder.value = true
             _error.value = null
             try {
-                val order = repo.createOrder(orderItems, deliveryAddress, comment)
+                val order = repo.createOrder(orderItems, deliveryAddress, phone, comment)
                 _orderSuccess.value = order.id
                 clearBasket()
             } catch (e: Exception) {

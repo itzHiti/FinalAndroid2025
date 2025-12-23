@@ -1,6 +1,7 @@
 package kz.itzhiti.donernaabaya.ui.viewmodels
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -9,6 +10,8 @@ import kotlinx.coroutines.launch
 import kz.itzhiti.donernaabaya.data.api.CoinBalance
 import kz.itzhiti.donernaabaya.data.api.CoinTransaction
 import kz.itzhiti.donernaabaya.data.api.Order
+import kz.itzhiti.donernaabaya.data.database.AppDatabase
+import kz.itzhiti.donernaabaya.data.database.entities.AppSettingsEntity
 import kz.itzhiti.donernaabaya.data.repositories.AuthRepository
 import kz.itzhiti.donernaabaya.data.repositories.CoinRepository
 import kz.itzhiti.donernaabaya.data.repositories.OrderRepository
@@ -17,6 +20,18 @@ class ProfileViewModel(app: Application) : AndroidViewModel(app) {
     private val authRepo = AuthRepository(app)
     private val coinRepo = CoinRepository(app)
     private val orderRepo = OrderRepository(app)
+    private val appSettingsDao = AppDatabase.getDatabase(app).appSettingsDao()
+
+    private val _isDarkMode = MutableLiveData<Boolean>(false)
+    val isDarkMode: LiveData<Boolean> = _isDarkMode
+
+    init {
+        // Загружаем настройку темы из БД
+        viewModelScope.launch {
+            val settings = appSettingsDao.getSettings()
+            _isDarkMode.postValue(settings?.isDarkMode ?: false)
+        }
+    }
 
     private val _username = MutableLiveData<String?>(authRepo.getUsername())
     val username: LiveData<String?> = _username
@@ -84,5 +99,19 @@ class ProfileViewModel(app: Application) : AndroidViewModel(app) {
 
     fun refreshProfile() {
         loadProfileData()
+    }
+
+    fun setDarkMode(isDark: Boolean) {
+        _isDarkMode.value = isDark
+        viewModelScope.launch {
+            val settings = appSettingsDao.getSettings() ?: AppSettingsEntity()
+            appSettingsDao.insertSettings(settings.copy(isDarkMode = isDark))
+        }
+
+        // Apply theme immediately
+        AppCompatDelegate.setDefaultNightMode(
+            if (isDark) AppCompatDelegate.MODE_NIGHT_YES
+            else AppCompatDelegate.MODE_NIGHT_NO
+        )
     }
 }

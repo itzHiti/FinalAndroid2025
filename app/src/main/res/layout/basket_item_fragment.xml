@@ -54,6 +54,48 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <!-- Order Form -->
+        <TextView
+            android:text="Данные для доставки"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Номер телефона"
+            app:startIconDrawable="@android:drawable/ic_menu_call">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:textColor="@android:color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Адрес доставки"
+            app:startIconDrawable="@android:drawable/ic_menu_mylocation">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:textColor="@android:color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <Button
             android:id="@+id/btnOrder"
             android:text="Оформить заказ"
@@ -77,7 +119,7 @@
         android:visibility="gone">
 
         <Button
-            android:id="@+id/btnBack"
+            android:id="@+id/btnBackBasket"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -85,7 +127,7 @@
             android:layout_marginEnd="8dp" />
 
         <Button
-            android:id="@+id/btnProfile"
+            android:id="@+id/btnProfileBasket"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

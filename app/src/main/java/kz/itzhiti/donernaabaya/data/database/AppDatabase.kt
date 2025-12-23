@@ -10,6 +10,8 @@ import kz.itzhiti.donernaabaya.data.database.dao.DonorCoinDao
 import kz.itzhiti.donernaabaya.data.database.dao.OrderDao
 import kz.itzhiti.donernaabaya.data.database.dao.OrderItemDao
 import kz.itzhiti.donernaabaya.data.database.dao.ProductDao
+import kz.itzhiti.donernaabaya.data.database.dao.AppSettingsDao
+import kz.itzhiti.donernaabaya.data.database.entities.AppSettingsEntity
 import kz.itzhiti.donernaabaya.data.database.entities.CoinTransactionEntity
 import kz.itzhiti.donernaabaya.data.database.entities.DeliveryEntity
 import kz.itzhiti.donernaabaya.data.database.entities.DonorCoinEntity
@@ -24,9 +26,10 @@ import kz.itzhiti.donernaabaya.data.database.entities.ProductEntity
         OrderItemEntity::class,
         DeliveryEntity::class,
         DonorCoinEntity::class,
-        CoinTransactionEntity::class
+        CoinTransactionEntity::class,
+        AppSettingsEntity::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -36,6 +39,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun deliveryDao(): DeliveryDao
     abstract fun donorCoinDao(): DonorCoinDao
     abstract fun coinTransactionDao(): CoinTransactionDao
+    abstract fun appSettingsDao(): AppSettingsDao
 
     companion object {
         @Volatile

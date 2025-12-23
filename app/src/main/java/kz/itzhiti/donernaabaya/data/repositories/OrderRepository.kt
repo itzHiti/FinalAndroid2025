@@ -23,9 +23,9 @@ class OrderRepository(context: Context) {
     private val donorCoinDao = db.donorCoinDao()
     private val tokenManager = TokenManager(context)
 
-    suspend fun createOrder(items: List<OrderItemRequest>, address: String, comment: String?): Order {
+    suspend fun createOrder(items: List<OrderItemRequest>, address: String, phone: String, comment: String?): Order {
         return try {
-            val request = CreateOrderRequest(items, address, comment)
+            val request = CreateOrderRequest(items, address, phone, comment)
             val order = api.createOrder(request)
 
             // Сохраняем заказ в БД

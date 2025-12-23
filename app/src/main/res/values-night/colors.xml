@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Base app palette -->
+    <!-- Dark theme colors -->
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
+    <color name="background_primary">#FF121212</color>
+    <color name="background_secondary">#FF1E1E1E</color>
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
 
-    <!-- Light theme semantic colors -->
-    <color name="background_primary">#FFFFFFFF</color>
-    <color name="background_secondary">#FFF5F5F5</color>
-    <color name="text_primary">#FF000000</color>
-    <color name="text_secondary">#FF757575</color>
-
-    <!-- Missing colors referenced in layouts -->
+    <!-- Accent colors remain same -->
     <color name="gray">#FF9E9E9E</color>
     <color name="green">#FF4CAF50</color>
     <color name="red">#FFF44336</color>
@@ -18,3 +16,4 @@
     <color name="dna_primary">#FFff5400</color>
     <color name="dna_primary_dark">#FFc63f00</color>
 </resources>
+

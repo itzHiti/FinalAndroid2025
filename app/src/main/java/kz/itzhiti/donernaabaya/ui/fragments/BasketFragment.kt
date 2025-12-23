@@ -93,34 +93,34 @@ class BasketFragment : Fragment() {
 
     private fun setupListeners() {
         binding.btnOrder.setOnClickListener {
-            showAddressDialog()
+            val phone = binding.etPhone.text.toString().trim()
+            val address = binding.etAddress.text.toString().trim()
+
+            when {
+                phone.isEmpty() -> {
+                    binding.etPhone.error = "Введите номер телефона"
+                    binding.etPhone.requestFocus()
+                }
+                address.isEmpty() -> {
+                    binding.etAddress.error = "Введите адрес доставки"
+                    binding.etAddress.requestFocus()
+                }
+                else -> {
+                    viewModel.placeOrder(address, phone)
+                }
+            }
         }
 
-        binding.btnBack.setOnClickListener {
+        // Toolbar navigation
+        binding.root.findViewById<View>(R.id.ivLogo)?.setOnClickListener {
             findNavController().navigate(R.id.action_basket_to_home)
         }
 
-        binding.btnProfile.setOnClickListener {
+        binding.root.findViewById<View>(R.id.btnProfile)?.setOnClickListener {
             findNavController().navigate(R.id.action_basket_to_profile)
         }
     }
 
-    private fun showAddressDialog() {
-        val editText = EditText(requireContext()).apply {
-            hint = "Адрес доставки"
-            setPadding(16, 16, 16, 16)
-        }
-
-        AlertDialog.Builder(requireContext())
-            .setTitle("Адрес доставки")
-            .setView(editText)
-            .setPositiveButton("Оформить") { _, _ ->
-                val address = editText.text.toString()
-                viewModel.placeOrder(address)
-            }
-            .setNegativeButton("Отмена", null)
-            .show()
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()

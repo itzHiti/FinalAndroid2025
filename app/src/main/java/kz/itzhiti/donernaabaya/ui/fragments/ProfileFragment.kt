@@ -86,6 +86,16 @@ class ProfileFragment : Fragment(R.layout.profile_fragment) {
             showCoinHistoryDialog()
         }
 
+        // Dark mode switch
+        binding.switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+            viewModel.setDarkMode(isChecked)
+        }
+
+        // Load current theme setting
+        viewModel.isDarkMode.observe(viewLifecycleOwner) { isDark ->
+            binding.switchDarkMode.isChecked = isDark
+        }
+
         binding.btnLogout.setOnClickListener {
             AlertDialog.Builder(requireContext())
                 .setTitle("Выход")

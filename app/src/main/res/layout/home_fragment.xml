@@ -28,6 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textColor="#FF6B6B"
         android:visibility="gone" />
     <EditText
         android:id="@+id/etSearch"

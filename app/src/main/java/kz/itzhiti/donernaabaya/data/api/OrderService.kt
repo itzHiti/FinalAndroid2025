@@ -71,6 +71,7 @@ data class UpdateProductRequest(
 data class CreateOrderRequest(
     val items: List<OrderItemRequest>,
     val deliveryAddress: String,
+    val phone: String,
     val comment: String? = null
 )
 
