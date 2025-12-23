@@ -19,28 +19,51 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/doner" />/>
+            android:src="@drawable/doner" />
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_marginStart="12dp"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/itemName"
+                android:id="@+id/productName"
                 android:text="Doner Classic"
                 android:textStyle="bold"
                 android:textSize="16sp"
+                android:textColor="@android:color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
             <TextView
-                android:id="@+id/itemPrice"
-                android:text="1500 ₸"
+                android:id="@+id/productDescription"
+                android:text="Классический донер"
                 android:textColor="#777"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/productPrice"
+                android:text="1500 ₸"
+                android:textColor="@android:color/black"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/productAvailability"
+                android:text="В наличии"
+                android:textColor="#4CAF50"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

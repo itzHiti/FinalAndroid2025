@@ -71,4 +71,15 @@ dependencies {
 
     implementation(libs.material)
     kapt(libs.androidx.room.compiler)
+
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
+
+    implementation("com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2")
+
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+
+    implementation("com.google.code.gson:gson:2.10.1")
 }

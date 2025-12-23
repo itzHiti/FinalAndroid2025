@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,84 +18,172 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal">
+            android:layout_height="wrap_content">
 
-            <!-- Фото профиля -->
-            <ImageView
-                android:id="@+id/imgProfile"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_marginTop="24dp"
-                android:background="@android:color/darker_gray"
-                android:scaleType="centerCrop"
-                android:clipToOutline="true"
-                android:src="@drawable/igor"/>
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
 
-            <!-- Имя (заголовок) -->
+            <!-- Error Message -->
             <TextView
-                android:text="Username"
-                android:textSize="22sp"
+                android:id="@+id/tvError"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FF6B6B"
+                android:visibility="gone"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Имя пользователя -->
+            <TextView
+                android:id="@+id/tvUsername"
+                android:text="Имя пользователя"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
+                android:textColor="@android:color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <!-- ====== ПОЛЯ ВНИЗУ ====== -->
-
-            <com.google.android.material.textfield.TextInputLayout
+            <!-- Donor Coins Card -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                app:boxBackgroundMode="outline">
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFFDE7">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etName"
-                    android:hint="Имя и фамилия"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:gravity="center">
 
-            <com.google.android.material.textfield.TextInputLayout
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Дкоины"
+                        android:textSize="14sp"
+                        android:textColor="#777" />
+
+                    <TextView
+                        android:id="@+id/tvCoinBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 🪙"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        android:textColor="#FF6F00"
+                        android:layout_marginTop="8dp" />
+
+                    <Button
+                        android:id="@+id/btnViewCoins"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:text="История"
+                        android:layout_marginTop="12dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Orders Section -->
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Мои заказы"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginTop="24dp" />
+
+            <TextView
+                android:id="@+id/tvNoOrders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Нет заказов"
+                android:textColor="#777"
+                android:gravity="center"
                 android:layout_marginTop="12dp"
-                app:boxBackgroundMode="outline">
+                android:visibility="gone" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etEmail"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOrders"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                app:boxBackgroundMode="outline">
+                android:layout_marginTop="12dp" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/etPhone"
-                    android:hint="Номер телефона"
-                    android:inputType="phone"
+            <!-- Hidden Coin History RecyclerView -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCoinHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <!-- Dark Theme Toggle -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
 
-            <!-- Кнопка сохранить -->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="🌙 Темная тема"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_primary" />
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchDarkMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Buttons -->
             <Button
-                android:id="@+id/btnSave"
-                android:text="save"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="@color/Butten_color"
-                android:textColor="@color/white"/>
+                android:id="@+id/btnRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="⟳ Обновить"
+                android:layout_marginTop="16dp" />
+
+            <Button
+                android:id="@+id/btnHome"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="◀ На главную"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/btnLogout"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="Выход"
+                android:textColor="@color/white"
+                android:backgroundTint="#FF6B6B"
+                android:layout_marginTop="24dp" />
 
         </LinearLayout>
 
     </ScrollView>
 
 </LinearLayout>
+
+
